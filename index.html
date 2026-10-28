@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        html, body { 
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+<body class="bg-slate-900 text-slate-100">
 
     <!-- Header Navigation -->
-    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <header class="border-b border-slate-800 bg-slate-950 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <div class="bg-amber-500 text-slate-950 p-2 rounded-lg font-black text-xl tracking-wider">IP</div>
                 <div>
@@ -25,37 +30,172 @@
                     <p class="text-xs text-slate-400 font-medium">Independent Civic Watchdog & Casework Portal</p>
                 </div>
             </div>
-            <nav class="flex gap-6 text-sm font-semibold text-slate-300">
-                <a href="#casework" class="hover:text-amber-400 transition">Casework Tracker</a>
-                <a href="#report" class="hover:text-amber-400 transition">Log an Issue</a>
-                <a href="#reps" class="hover:text-amber-400 transition">Local Reps</a>
-                <a href="#about" class="hover:text-amber-400 transition">About Us</a>
+            <nav class="flex gap-4 text-xs sm:text-sm font-semibold text-slate-300">
+                <a href="#casework" class="hover:text-amber-400">Casework Tracker</a>
+                <a href="#report" class="hover:text-amber-400">Log Issue</a>
+                <a href="#reps" class="hover:text-amber-400">Local Reps</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-b from-slate-950 to-slate-900 border-b border-slate-800 py-12 px-4">
-        <div class="max-w-5xl mx-auto text-center space-y-4">
+    <section class="bg-slate-950 border-b border-slate-800 py-10 px-4 text-center">
+        <div class="max-w-4xl mx-auto space-y-4">
             <span class="inline-block bg-amber-500/10 text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-amber-500/20">
                 EVIDENCE OVER RHETORIC
             </span>
             <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
                 Holding Renfrewshire Council Accountable.
             </h2>
-            <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+            <p class="text-slate-400 text-sm max-w-2xl mx-auto">
                 Replacing online speculation with a transparent, verifiable paper trail. We log local issues, submit formal council correspondence, and publicly track results.
             </p>
-            <div class="flex flex-wrap justify-center gap-4 pt-4">
-                <a href="#casework" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3 rounded-lg text-sm transition">
-                    View Live Tracker
-                </a>
-                <a href="#report" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-6 py-3 rounded-lg text-sm border border-slate-700 transition">
-                    Submit Community Issue
+            <div class="flex justify-center gap-3 pt-2">
+                <a href="#casework" class="bg-amber-500 text-slate-950 font-bold px-5 py-3 rounded-lg text-sm">
+                    View Live Tracker 👇
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Main Content Area -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6
+    <!-- Content Sections -->
+    <div class="max-w-7xl mx-auto px-4 py-10 space-y-12">
+
+        <!-- Casework Tracker Section -->
+        <section id="casework" class="space-y-4 pt-4">
+            <div>
+                <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-folder-open text-amber-500"></i> Active Casework Tracker
+                </h3>
+                <p class="text-slate-400 text-sm">Real-time status of formal enquiries submitted to Renfrewshire Council.</p>
+            </div>
+
+            <!-- Table -->
+            <div class="overflow-x-auto bg-slate-950 rounded-xl border border-slate-800">
+                <table class="w-full text-left text-sm text-slate-300">
+                    <thead class="bg-slate-900 text-slate-400 uppercase text-xs font-bold border-b border-slate-800">
+                        <tr>
+                            <th class="p-3">Case ID</th>
+                            <th class="p-3">Category</th>
+                            <th class="p-3">Issue Description</th>
+                            <th class="p-3">Department</th>
+                            <th class="p-3">Council Ref #</th>
+                            <th class="p-3">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 font-medium">
+                        <tr>
+                            <td class="p-3 font-mono text-amber-400 font-bold">IP-2026-01</td>
+                            <td class="p-3">Environment</td>
+                            <td class="p-3 text-white">Public littering & unserviced bins in Town Centre</td>
+                            <td class="p-3 text-xs font-mono text-slate-400">ei@renfrewshire.gov.uk</td>
+                            <td class="p-3 text-slate-500 italic">Pending...</td>
+                            <td class="p-3"><span class="bg-amber-500/10 text-amber-400 text-xs px-2 py-1 rounded border border-amber-500/30">Awaiting Ref</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-mono text-amber-400 font-bold">IP-2026-02</td>
+                            <td class="p-3">Trading Standards</td>
+                            <td class="p-3 text-white">Suspected illegal underage sales complaint</td>
+                            <td class="p-3 text-xs font-mono text-slate-400">ts.es@renfrewshire.gov.uk</td>
+                            <td class="p-3 text-slate-500 italic">Pending...</td>
+                            <td class="p-3"><span class="bg-amber-500/10 text-amber-400 text-xs px-2 py-1 rounded border border-amber-500/30">Awaiting Ref</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-mono text-amber-400 font-bold">IP-2026-03</td>
+                            <td class="p-3">Community Safety</td>
+                            <td class="p-3 text-white">Anti-social behavior & safety concerns in High St area</td>
+                            <td class="p-3 text-xs font-mono text-slate-400">rcsp@renfrewshire.gov.uk</td>
+                            <td class="p-3 text-slate-500 italic">Pending...</td>
+                            <td class="p-3"><span class="bg-amber-500/10 text-amber-400 text-xs px-2 py-1 rounded border border-amber-500/30">Awaiting Ref</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-mono text-amber-400 font-bold">IP-2026-04</td>
+                            <td class="p-3">Waste Services</td>
+                            <td class="p-3 text-white">Operational delays & missed collection schedules</td>
+                            <td class="p-3 text-xs font-mono text-slate-400">customerservices@renfrewshire.gov.uk</td>
+                            <td class="p-3 text-slate-500 italic">Pending...</td>
+                            <td class="p-3"><span class="bg-amber-500/10 text-amber-400 text-xs px-2 py-1 rounded border border-amber-500/30">Awaiting Ref</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-mono text-amber-400 font-bold">IP-2026-05</td>
+                            <td class="p-3">Infrastructure</td>
+                            <td class="p-3 text-white">Pavement maintenance & road surface hazard audit</td>
+                            <td class="p-3 text-xs font-mono text-slate-400">ei@renfrewshire.gov.uk</td>
+                            <td class="p-3 text-slate-500 italic">Pending...</td>
+                            <td class="p-3"><span class="bg-amber-500/10 text-amber-400 text-xs px-2 py-1 rounded border border-amber-500/30">Awaiting Ref</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Submit Form Section -->
+        <section id="report" class="bg-slate-950 rounded-xl p-6 border border-slate-800 pt-4">
+            <h3 class="text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-bullhorn text-amber-500"></i> Report a Local Issue
+            </h3>
+            <p class="text-slate-400 text-sm mb-6">
+                Notice something neglected in Paisley? Submit details below to log it into our public queue.
+            </p>
+            
+            <form onsubmit="event.preventDefault(); alert('Issue logged!');" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Issue Category</label>
+                    <select required class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 text-sm text-white">
+                        <option value="Waste & Litter">Waste & Bins</option>
+                        <option value="Roads & Pavements">Roads & Pavements</option>
+                        <option value="Community Safety">Community Safety</option>
+                        <option value="Trading Standards">Trading Standards</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Location in Paisley</label>
+                    <input type="text" required placeholder="e.g. High Street, Paisley" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 text-sm text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Description of Issue</label>
+                    <textarea rows="4" required placeholder="Provide concise details..." class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 text-sm text-white"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-amber-500 text-slate-950 font-bold py-3 rounded-lg text-sm">
+                    Submit Community Issue
+                </button>
+            </form>
+        </section>
+
+        <!-- Representatives Directory Section -->
+        <section id="reps" class="space-y-4 pt-4">
+            <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-users text-amber-500"></i> Local Representatives
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span class="text-xs font-bold text-slate-500 uppercase">MP</span>
+                    <h4 class="text-base font-bold text-white">Johanna Baxter MP</h4>
+                    <p class="text-xs text-amber-400">Paisley and Renfrewshire South</p>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span class="text-xs font-bold text-slate-500 uppercase">MP</span>
+                    <h4 class="text-base font-bold text-white">Alison Taylor MP</h4>
+                    <p class="text-xs text-amber-400">Paisley and Renfrewshire North</p>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span class="text-xs font-bold text-slate-500 uppercase">MSP</span>
+                    <h4 class="text-base font-bold text-white">George Adam MSP</h4>
+                    <p class="text-xs text-amber-400">Paisley Constituency</p>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span class="text-xs font-bold text-slate-500 uppercase">MSP</span>
+                    <h4 class="text-base font-bold text-white">Neil Bibby MSP</h4>
+                    <p class="text-xs text-amber-400">West Scotland Region</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="border-t border-slate-800 bg-slate-950 py-6 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Imperium Paisley. Non-partisan civic watchdog organization.</p>
+    </footer>
+
+</body>
+</html>
