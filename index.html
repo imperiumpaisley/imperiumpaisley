@@ -146,6 +146,78 @@
     </div>
   </section>
 
+  <!-- Submit Form Section -->
+  <section id="report" class="bg-slate-950 border-t border-b border-slate-800 py-12 px-4">
+    <div class="max-w-2xl mx-auto bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-2xl">
+      <h3 class="text-2xl font-bold text-white mb-2 flex items-center gap-3">
+        <i class="fa-solid fa-bullhorn text-amber-400"></i> Report a Local Issue
+      </h3>
+      <p class="text-slate-400 text-sm mb-6">
+        Notice something neglected in Paisley? Submit details below to log it into our public queue.
+      </p>
+
+      <form onsubmit="event.preventDefault(); alert('Thank you! Issue recorded for triage.');" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Issue Category</label>
+          <select required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+            <option value="Waste & Bins">Waste & Bins</option>
+            <option value="Roads & Pavements">Roads & Pavements</option>
+            <option value="Community Safety">Community Safety</option>
+            <option value="Trading Standards">Trading Standards</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Location / Street</label>
+          <input type="text" placeholder="e.g. Causeyside Street, Paisley" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Description of Failure</label>
+          <textarea rows="4" placeholder="Provide concise details..." required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 px-4 rounded-lg transition duration-200 shadow-lg shadow-amber-500/10">
+          Submit Community Issue
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Local Representatives Directory Section -->
+  <section id="reps" class="max-w-7xl mx-auto px-4 py-12">
+    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+      <i class="fa-solid fa-users text-amber-400"></i> Local Representatives Directory
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Card 1 -->
+      <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl">
+        <h4 class="font-bold text-white text-base">Renfrewshire Environment & Infrastructure</h4>
+        <p class="text-xs text-amber-400 font-medium mb-3">Council Department</p>
+        <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-envelope mr-1 text-slate-500"></i> ei@renfrewshire.gov.uk</p>
+        <p class="text-xs text-slate-400"><i class="fa-solid fa-phone mr-1 text-slate-500"></i> 0300 300 0300</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl">
+        <h4 class="font-bold text-white text-base">Waste & Recycling Services</h4>
+        <p class="text-xs text-amber-400 font-medium mb-3">Refuse & Cleansing Team</p>
+        <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-envelope mr-1 text-slate-500"></i> mybins@renfrewshire.gov.uk</p>
+        <p class="text-xs text-slate-400"><i class="fa-solid fa-phone mr-1 text-slate-500"></i> 0300 300 0300</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl">
+        <h4 class="font-bold text-white text-base">Community Safety Partnership</h4>
+        <p class="text-xs text-amber-400 font-medium mb-3">Safety & Enforcement</p>
+        <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-envelope mr-1 text-slate-500"></i> cs@renfrewshire.gov.uk</p>
+        <p class="text-xs text-slate-400"><i class="fa-solid fa-phone mr-1 text-slate-500"></i> 0300 300 0300</p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="border-t border-slate-800 bg-slate-950 py-6 text-center text-xs text-slate-500">
     <p>Imperium Paisley &copy; 2026. Independent Civic Watchdog Platform.</p>
@@ -153,3 +225,4 @@
 
 </body>
 </html>
+
