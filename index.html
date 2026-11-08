@@ -1,378 +1,887 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Imperium Paisley | Civic Watchdog & Evidence-Based Oversight</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-color: #0f172a;
-      color: #f8fafc;
-      font-family: system-ui, -apple-system, sans-serif;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Imperium Paisley | Civic Accountability</title>
+
+<meta name="description" content="Imperium Paisley is an independent, non-partisan civic watchdog focused on public accountability in Paisley and Renfrewshire.">
+
+<style>
+:root {
+  --navy: #101827;
+  --navy-light: #1c293c;
+  --gold: #d7ad57;
+  --gold-light: #f0d89e;
+  --white: #ffffff;
+  --paper: #f4f6f9;
+  --text: #172033;
+  --muted: #647084;
+  --border: #dce2ea;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(92%, 1120px);
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+header {
+  background: var(--navy);
+  color: white;
+  border-bottom: 3px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  min-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.brand span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(120deg, var(--navy), var(--navy-light));
+  color: white;
+  padding: 100px 0;
+  border-bottom: 5px solid var(--gold);
+}
+
+.eyebrow {
+  color: var(--gold-light);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: .8rem;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  max-width: 750px;
+  color: #d9e1ec;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 22px;
+  margin: 8px 8px 0 0;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid var(--gold);
+}
+
+.button-primary {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.button-outline {
+  color: white;
+}
+
+.button-outline:hover {
+  background: rgba(255,255,255,.1);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 75px 0;
+}
+
+.section-dark {
+  background: var(--navy);
+  color: white;
+}
+
+.section-heading {
+  max-width: 750px;
+  margin-bottom: 35px;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+.section-dark .section-heading p {
+  color: #c8d1dd;
+}
+
+.notice {
+  background: #fff8e8;
+  border-left: 4px solid var(--gold);
+  padding: 20px;
+  margin: 25px auto;
+  border-radius: 5px;
+  color: #514323;
+}
+
+/* CARDS */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.dark-card {
+  background: var(--navy-light);
+  color: white;
+  border: 1px solid #344258;
+}
+
+.dark-card p {
+  color: #c8d1dd;
+}
+
+.number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #9a762b;
+}
+
+.gold-line {
+  height: 3px;
+  width: 55px;
+  background: var(--gold);
+  margin: 18px 0;
+}
+
+/* CASE REGISTER */
+
+.case-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.case-controls input,
+.case-controls select {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  min-width: 750px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+th {
+  background: var(--navy);
+  color: white;
+  font-size: .85rem;
+}
+
+td {
+  font-size: .9rem;
+}
+
+.case-id {
+  color: #8a6723;
+  font-weight: bold;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #fff1d3;
+  color: #795515;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+/* GOOGLE FORM */
+
+.form-container {
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.form-container iframe {
+  display: block;
+  width: 100%;
+  min-height: 1500px;
+  border: none;
+  background: white;
+}
+
+/* CONTACT AND FOOTER */
+
+.small {
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.section-dark .small {
+  color: #c8d1dd;
+}
+
+.legal {
+  background: #e8edf3;
+}
+
+.contact-email {
+  color: #8a6723;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  background: #0b111b;
+  color: #c6cfda;
+  padding: 35px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+footer a {
+  color: var(--gold-light);
+}
+
+.footer-title {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 65px 0;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .form-container iframe {
+    min-height: 1700px;
+  }
+}
+</style>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
 
-  <!-- Header / Navigation -->
-  <header class="border-b border-slate-800 bg-slate-900/80 sticky top-0 z-50 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded bg-amber-500 text-slate-950 font-bold flex items-center justify-center text-lg shadow-md">
-          IP
-        </div>
-        <div>
-          <h1 class="font-extrabold tracking-tight text-white text-lg leading-tight">IMPERIUM PAISLEY</h1>
-          <p class="text-xs text-slate-400 font-medium">Civic Watchdog & Evidence-Based Oversight</p>
-        </div>
-      </div>
-      <a href="#report" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-4 py-2 rounded-lg text-sm transition shadow-lg">
-        Submit Report
-      </a>
-    </div>
-  </header>
+<body>
 
-  <!-- Main Content Container -->
-  <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full space-y-12">
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">
+      IMPERIUM <span>PAISLEY</span>
+    </a>
 
-    <!-- Hero Section -->
-    <section class="text-center md:text-left space-y-4">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-wide uppercase">
-        <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-        Active Civic Oversight
-      </div>
-      <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white max-w-3xl">
-        Holding Renfrewshire Council & Local Representatives Accountable
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#principles">Principles</a>
+      <a href="#audit">Public Audit</a>
+      <a href="#report">Report Issue</a>
+      <a href="#foi">FOI</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Independent Civic Accountability</div>
+
+    <h1>
+      Evidence over rhetoric.<br>
+      Accountability over excuses.
+    </h1>
+
+    <p>
+      Imperium Paisley is an independent, non-partisan civic watchdog
+      focused on public services, local governance and accountability
+      across Paisley and Renfrewshire.
+    </p>
+
+    <p>
+      We document issues, examine public records, track responses and
+      advocate for constructive improvements in the public interest.
+    </p>
+
+    <a class="button button-primary" href="#audit">
+      View Public Audit
+    </a>
+
+    <a class="button button-outline" href="#report">
+      Submit an Observation
+    </a>
+  </div>
+</section>
+
+<div class="container">
+  <div class="notice">
+    <strong>Our position:</strong>
+    Imperium Paisley is currently a civic accountability initiative,
+    not a political party or campaign for electoral office.
+    We scrutinise public decisions and services regardless of party affiliation.
+  </div>
+</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Who We Are</div>
+
+      <h2>
+        Public authority must come with public accountability.
       </h2>
-      <p class="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed">
-        Data-driven civic oversight, public casework tracking, and formal escalation for residents across Paisley. Evidence over rhetoric.
+
+      <p>
+        Local government decisions affect our streets, parks,
+        public services and communities.
       </p>
-    </section>
+    </div>
 
-    <!-- KPI / Response Time Tracker -->
-    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="bg-slate-900 border border-slate-800 rounded-lg p-4 shadow-md">
-        <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Active Casework</span>
-        <div class="text-2xl font-black text-amber-500 mt-1">9 Files</div>
-        <span class="text-xs text-slate-500">1 Under Investigation</span>
-      </div>
-      <div class="bg-slate-900 border border-slate-800 rounded-lg p-4 shadow-md">
-        <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Departments Engaged</span>
-        <div class="text-2xl font-black text-white mt-1">3 Units</div>
-        <span class="text-xs text-slate-500">E&I, Waste, Trading Stds</span>
-      </div>
-      <div class="bg-slate-900 border border-slate-800 rounded-lg p-4 shadow-md">
-        <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Avg Response Window</span>
-        <div class="text-2xl font-black text-white mt-1">14 Days</div>
-        <span class="text-xs text-slate-500">Statutory Standard</span>
-      </div>
-      <div class="bg-slate-900 border border-slate-800 rounded-lg p-4 shadow-md">
-        <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">FOI Requests</span>
-        <div class="text-2xl font-black text-amber-500 mt-1">2 Active</div>
-        <span class="text-xs text-slate-500">Audit & Compliance Logs</span>
-      </div>
-    </section>
-
-    <!-- Public Casework Portal Table Section -->
-    <section class="bg-slate-900 border border-slate-800 rounded-lg p-6 shadow-xl space-y-6">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
-        <div>
-          <h3 class="text-xl font-bold text-white flex items-center gap-2">
-            <span>📋</span> Public Casework Portal
-          </h3>
-          <p class="text-xs text-slate-400 mt-1">Live tracking of official communications and department inquiries.</p>
-        </div>
-        <span class="inline-block bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-bold px-3 py-1 rounded-md self-start">
-          9 Active Cases In Progress
-        </span>
+    <div class="grid">
+      <div class="card">
+        <div class="number">01</div>
+        <h3>Observe</h3>
+        <div class="gold-line"></div>
+        <p>
+          Record public-interest issues with dates, locations
+          and supporting evidence.
+        </p>
       </div>
 
-      <div class="overflow-x-auto">
-        <table class="w-full text-left border-collapse text-sm">
-          <thead>
-            <tr class="border-b border-slate-800 text-slate-400 text-xs uppercase tracking-wider">
-              <th class="px-4 py-3 font-semibold">Case ID</th>
-              <th class="px-4 py-3 font-semibold">Council Ref</th>
-              <th class="px-4 py-3 font-semibold">Category</th>
-              <th class="px-4 py-3 font-semibold">Description</th>
-              <th class="px-4 py-3 font-semibold">Department</th>
-              <th class="px-4 py-3 font-semibold text-right">Status</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-800/60 text-slate-300">
-            <!-- IP-2026-01 -->
-            <tr class="hover:bg-slate-800/30 transition">
-              <td class="px-4 py-3 font-bold text-amber-400">IP-2026-01</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-500">—</td>
-              <td class="px-4 py-3">Infrastructure</td>
-              <td class="px-4 py-3 text-slate-400">Delayed response to public realm service enquiries</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-400">ei@renfrewshire.gov.uk</td>
-              <td class="px-4 py-3 text-right">
-                <span class="px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded text-xs font-semibold border border-amber-500/30">In Progress</span>
-              </td>
-            </tr>
-            <!-- IP-2026-02 -->
-            <tr class="hover:bg-slate-800/30 transition">
-              <td class="px-4 py-3 font-bold text-amber-400">IP-2026-02</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-500">—</td>
-              <td class="px-4 py-3">Waste & Bins</td>
-              <td class="px-4 py-3 text-slate-400">Missed collections following schedule changes in Paisley</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-400">mybins@renfrewshire.gov.uk</td>
-              <td class="px-4 py-3 text-right">
-                <span class="px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded text-xs font-semibold border border-amber-500/30">In Progress</span>
-              </td>
-            </tr>
-            <!-- IP-2026-03 -->
-            <tr class="hover:bg-slate-800/30 transition">
-              <td class="px-4 py-3 font-bold text-amber-400">IP-2026-03</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-500">—</td>
-              <td class="px-4 py-3">Roads & Pavements</td>
-              <td class="px-4 py-3 text-slate-400">Pothole accumulation and uneven footpaths</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-400">ei@renfrewshire.gov.uk</td>
-              <td class="px-4 py-3 text-right">
-                <span class="px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded text-xs font-semibold border border-amber-500/30">In Progress</span>
-              </td>
-            </tr>
-            <!-- IP-2026-04 -->
-            <tr class="hover:bg-slate-800/30 transition">
-              <td class="px-4 py-3 font-bold text-amber-400">IP-2026-04</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-500">—</td>
-              <td class="px-4 py-3">Community Safety</td>
-              <td class="px-4 py-3 text-slate-400">Lighting outages and public realm maintenance gaps</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-400">cs@renfrewshire.gov.uk</td>
-              <td class="px-4 py-3 text-right">
-                <span class="px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded text-xs font-semibold border border-amber-500/30">In Progress</span>
-              </td>
-            </tr>
-            <!-- IP-2026-05 -->
-            <tr class="hover:bg-slate-800/30 transition bg-amber-500/5">
-              <td class="px-4 py-3 font-bold text-amber-400">IP-2026-05</td>
-              <td class="px-4 py-3 text-xs font-mono font-bold text-amber-300">c161663</td>
-              <td class="px-4 py-3">Trading Standards</td>
-              <td class="px-4 py-3 text-slate-300">Consumer protection & retail compliance review</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-400">ts.es@renfrewshire.gov.uk</td>
-              <td class="px-4 py-3 text-right">
-                <span class="px-2.5 py-1 bg-blue-500/20 text-blue-300 rounded text-xs font-semibold border border-blue-500/30">Under Investigation</span>
-              </td>
-            </tr>
-            <!-- IP-2026-06 -->
-            <tr class="hover:bg-slate-800/30 transition">
-              <td class="px-4 py-3 font-bold text-amber-400">IP-2026-06</td>
-              <td class="px-4 py-3 text-xs font-mono font-bold text-slate-300">26-4699P</td>
-              <td class="px-4 py-3">Infrastructure</td>
-              <td class="px-4 py-3 text-slate-400">Gilmour Street Station Exit — Floral landscaping & public realm improvements</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-400">ei@renfrewshire.gov.uk</td>
-              <td class="px-4 py-3 text-right">
-                <span class="px-2.5 py-1 bg-slate-700/50 text-slate-300 rounded text-xs font-semibold border border-slate-600/50">Response Received</span>
-              </td>
-            </tr>
-            <!-- IP-2026-09 -->
-            <tr class="hover:bg-slate-800/30 transition">
-              <td class="px-4 py-3 font-bold text-amber-400">IP-2026-09</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-500">—</td>
-              <td class="px-4 py-3">Trading Standards</td>
-              <td class="px-4 py-3 text-slate-400">Town Centre Vacant Shopfronts, Litter & Graffiti</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-400">ts.es@renfrewshire.gov.uk</td>
-              <td class="px-4 py-3 text-right">
-                <span class="px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded text-xs font-semibold border border-amber-500/30">In Progress</span>
-              </td>
-            </tr>
-            <!-- IP-2026-10 -->
-            <tr class="hover:bg-slate-800/30 transition">
-              <td class="px-4 py-3 font-bold text-amber-400">IP-2026-10</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-500">—</td>
-              <td class="px-4 py-3">Waste & Bins</td>
-              <td class="px-4 py-3 text-slate-400">Abandoned Shopping Trolley Accumulation (Dalskeith / Barochan / Glencoats)</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-400">ei@renfrewshire.gov.uk</td>
-              <td class="px-4 py-3 text-right">
-                <span class="px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded text-xs font-semibold border border-amber-500/30">In Progress</span>
-              </td>
-            </tr>
-            <!-- IP-2026-11 -->
-            <tr class="hover:bg-slate-800/30 transition">
-              <td class="px-4 py-3 font-bold text-amber-400">IP-2026-11</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-500">—</td>
-              <td class="px-4 py-3">Regeneration / Public Realm</td>
-              <td class="px-4 py-3 text-slate-400">Ferguslie Park (Tannahill Terrace & Road) — Clearance neglect, fly-tipping, graffiti & hazardous litter</td>
-              <td class="px-4 py-3 text-xs font-mono text-slate-400">ei@renfrewshire.gov.uk</td>
-              <td class="px-4 py-3 text-right">
-                <span class="px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded text-xs font-semibold border border-amber-500/30">In Progress</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Freedom of Information (FOI) Log Section -->
-    <section class="bg-slate-900 border border-slate-800 rounded-lg p-6 shadow-xl space-y-6">
-      <div class="border-b border-slate-800 pb-4">
-        <h3 class="text-xl font-bold text-white flex items-center gap-2">
-          <span>📜</span> Freedom of Information (FOI) Log
-        </h3>
-        <p class="text-xs text-slate-400 mt-1">Formal statutory requests submitted to local authorities for public record disclosures.</p>
+      <div class="card">
+        <div class="number">02</div>
+        <h3>Verify</h3>
+        <div class="gold-line"></div>
+        <p>
+          Distinguish verified information, resident reports
+          and unresolved matters.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- FOI 1 -->
-        <div class="bg-slate-950 border border-slate-800 rounded-lg p-4 space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="text-xs font-bold text-amber-400 font-mono">FOI-2026-01</span>
-            <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px] font-semibold rounded">Submitted</span>
-          </div>
-          <h4 class="text-sm font-semibold text-white">Renfrewshire Council Waste Management SLA & Bin Tracking Audit Logs</h4>
-          <p class="text-xs text-slate-400">Audit request for automated uplift tracking accuracy and contractor SLA performance benchmarks.</p>
-          <div class="pt-2 border-t border-slate-800 flex justify-between text-[11px] text-slate-500">
-            <span>Status: Awaiting Response</span>
-          </div>
-        </div>
-
-        <!-- FOI 2 -->
-        <div class="bg-slate-950 border border-slate-800 rounded-lg p-4 space-y-3">
-          <div class="flex justify-between items-start">
-            <span class="text-xs font-bold text-amber-400 font-mono">FOI-2026-02</span>
-            <span class="px-2 py-0.5 bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px] font-semibold rounded">Submitted</span>
-          </div>
-          <h4 class="text-sm font-semibold text-white">Retail Nicotine Vapour Inspection Frequencies & Compliance Metrics</h4>
-          <p class="text-xs text-slate-400">Request for trading standards inspection logs across Paisley retail zones for statutory compliance.</p>
-          <div class="pt-2 border-t border-slate-800 flex justify-between text-[11px] text-slate-500">
-            <span>Status: Awaiting Response</span>
-          </div>
-        </div>
+      <div class="card">
+        <div class="number">03</div>
+        <h3>Account</h3>
+        <div class="gold-line"></div>
+        <p>
+          Track correspondence, responses and reported action
+          without overstating conclusions.
+        </p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Local Representatives & Council Directory Section -->
-    <section class="bg-slate-900 border border-slate-800 rounded-lg p-6 shadow-xl space-y-6">
-      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
-        <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-        </svg>
-        <div>
-          <h3 class="text-xl font-bold text-white">Local Representatives & Council Directory</h3>
-          <p class="text-xs text-slate-400">Key elected members and official council department contacts.</p>
-        </div>
+<!-- PRINCIPLES -->
+
+<section id="principles" class="section-dark">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Our Standards</div>
+      <h2>Principles that guide our work</h2>
+      <p>
+        Fair, transparent, proportionate and evidence-based civic scrutiny.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card dark-card">
+        <h3>Non-partisan scrutiny</h3>
+        <p>
+          We assess public decisions on their merits,
+          regardless of party affiliation.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- MP Card -->
-        <div class="bg-slate-950 border border-slate-800 rounded-lg p-4 space-y-2">
-          <span class="text-[10px] font-semibold uppercase tracking-wider text-amber-500">UK Parliament (MP)</span>
-          <h4 class="text-base font-bold text-white">Johanna Baxter MP</h4>
-          <p class="text-xs text-slate-400">Paisley and Renfrewshire South</p>
-          <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
-            <span>House of Commons</span>
-            <span class="text-slate-300 font-medium">Labour</span>
-          </div>
-        </div>
-
-        <!-- MSP Constituency Card -->
-        <div class="bg-slate-950 border border-slate-800 rounded-lg p-4 space-y-2">
-          <span class="text-[10px] font-semibold uppercase tracking-wider text-amber-500">Scottish Parliament (MSP)</span>
-          <h4 class="text-base font-bold text-white">George Adam MSP</h4>
-          <p class="text-xs text-slate-400">Paisley Constituency</p>
-          <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
-            <span>Holyrood</span>
-            <span class="text-slate-300 font-medium">SNP</span>
-          </div>
-        </div>
-
-        <!-- Regional MSPs Card -->
-        <div class="bg-slate-950 border border-slate-800 rounded-lg p-4 space-y-2">
-          <span class="text-[10px] font-semibold uppercase tracking-wider text-amber-500">West Scotland MSPs</span>
-          <h4 class="text-base font-bold text-white">Regional Representatives</h4>
-          <ul class="text-xs text-slate-400 space-y-1">
-            <li>Neil Bibby MSP <span class="text-slate-500">(Lab)</span></li>
-            <li>Russell Findlay MSP <span class="text-slate-500">(Con)</span></li>
-            <li>Ross Greer MSP <span class="text-slate-500">(Green)</span></li>
-            <li>Katy Clark MSP <span class="text-slate-500">(Lab)</span></li>
-          </ul>
-          <div class="pt-1 border-t border-slate-800/80 text-[10px] text-slate-500">
-            Holyrood Regional List
-          </div>
-        </div>
+      <div class="card dark-card">
+        <h3>Evidence before accusation</h3>
+        <p>
+          An observation is not automatically proof of negligence,
+          misconduct or legal breach.
+        </p>
       </div>
 
-      <!-- Council Email Directory -->
-      <div class="bg-slate-950 border border-slate-800 rounded-lg p-4 space-y-3">
-        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Official Council Contacts</h4>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
-          <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
-            <span class="block text-slate-500 text-[10px]">Environment & Infrastructure</span>
-            <a href="mailto:ei@renfrewshire.gov.uk" class="text-amber-400 hover:underline font-mono">ei@renfrewshire.gov.uk</a>
-          </div>
-          <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
-            <span class="block text-slate-500 text-[10px]">Waste & Bins</span>
-            <a href="mailto:mybins@renfrewshire.gov.uk" class="text-amber-400 hover:underline font-mono">mybins@renfrewshire.gov.uk</a>
-          </div>
-          <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
-            <span class="block text-slate-500 text-[10px]">Trading Standards</span>
-            <a href="mailto:ts.es@renfrewshire.gov.uk" class="text-amber-400 hover:underline font-mono truncate block">ts.es@renfrewshire.gov.uk</a>
-          </div>
-          <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
-            <span class="block text-slate-500 text-[10px]">Community Safety & Services</span>
-            <a href="mailto:cs@renfrewshire.gov.uk" class="text-amber-400 hover:underline font-mono">cs@renfrewshire.gov.uk</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Report an Issue Section -->
-    <section id="report" class="bg-slate-900 border border-slate-800 rounded-lg p-6 shadow-xl space-y-6">
-      <div class="border-b border-slate-800 pb-4">
-        <h3 class="text-xl font-bold text-white flex items-center gap-2">
-          <span>📝</span> Report a Local Issue
-        </h3>
-        <p class="text-xs text-slate-400 mt-1">Notice something neglected in Paisley? Submit details below to log it into our public casework tracker.</p>
+      <div class="card dark-card">
+        <h3>Constructive accountability</h3>
+        <p>
+          We seek explanations, measurable improvements
+          and transparent public services.
+        </p>
       </div>
 
-      <form class="space-y-4 max-w-2xl" onsubmit="event.preventDefault(); alert('Case report compiled! Please email details to our casework desk or committee contacts.');">
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Issue Category</label>
-          <select class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
-            <option>Waste & Bins</option>
-            <option>Roads & Pavements</option>
-            <option>Infrastructure & Public Realm</option>
-            <option>Community Safety & Lighting</option>
-            <option>Trading Standards & Retail</option>
-          </select>
-        </div>
+      <div class="card dark-card">
+        <h3>Fairness and right of reply</h3>
+        <p>
+          Relevant authorities should have a reasonable opportunity
+          to respond to disputed claims.
+        </p>
+      </div>
 
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Location / Street Address</label>
-          <input type="text" placeholder="e.g., High Street, Paisley" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
-        </div>
+      <div class="card dark-card">
+        <h3>Public interest</h3>
+        <p>
+          Our work concerns public services, public spaces
+          and responsible use of resources.
+        </p>
+      </div>
 
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Existing Council Reference (Optional)</label>
-          <input type="text" placeholder="e.g., c161663" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
-        </div>
+      <div class="card dark-card">
+        <h3>Corrections and transparency</h3>
+        <p>
+          We aim to correct material errors and distinguish
+          evidence from opinion.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Details & Context</label>
-          <textarea rows="4" placeholder="Provide a brief description of the issue..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-amber-500"></textarea>
-        </div>
+<!-- PUBLIC AUDIT -->
 
-        <div class="flex items-center gap-2">
-          <input type="checkbox" id="evidence" class="rounded bg-slate-950 border-slate-800 text-amber-500 focus:ring-0">
-          <label for="evidence" class="text-xs text-slate-400">I have photos/evidence ready to provide upon request.</label>
-        </div>
+<section id="audit">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Public Audit Register</div>
+      <h2>Documented observations</h2>
 
-        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold p-3 rounded-lg text-sm transition shadow-lg">
-          Submit Case to Public Tracker
-        </button>
-      </form>
-    </section>
+      <p>
+        These entries record observations only. They do not establish
+        legal liability or confirm that a council report has been submitted.
+      </p>
+    </div>
 
-  </main>
+    <div class="case-controls">
+      <input
+        type="search"
+        id="caseSearch"
+        placeholder="Search cases or locations...">
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-800 bg-slate-900 mt-16 py-6 text-center text-xs text-slate-500 space-y-2 px-4">
-    <p>&copy; 2026 Imperium Paisley. Non-partisan civic oversight holding Renfrewshire Council and local representatives accountable.</p>
-    <p class="font-semibold text-slate-400">EVIDENCE OVER RHETORIC.</p>
-    <p class="text-[10px] text-slate-600 max-w-xl mx-auto">Official Disclaimer: Imperium Paisley is an independent, community-funded civic watchdog. We do not accept political party donations or government grants.</p>
-  </footer>
+      <select id="statusFilter">
+        <option value="">All statuses</option>
+        <option value="Observation recorded">Observation recorded</option>
+        <option value="Submitted">Submitted</option>
+        <option value="Awaiting response">Awaiting response</option>
+        <option value="Response received">Response received</option>
+        <option value="Resolved">Resolved</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table id="caseTable">
+        <thead>
+          <tr>
+            <th>Case ID</th>
+            <th>Location</th>
+            <th>Issue</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="case-id">IP-001</td>
+            <td>Killoch Avenue</td>
+            <td>Road / footway condition</td>
+            <td>5 November 2026</td>
+            <td><span class="status">Observation recorded</span></td>
+            <td>
+              Surface deterioration and uneven areas observed.
+              Responsibility requires verification.
+            </td>
+          </tr>
+
+          <tr>
+            <td class="case-id">IP-002</td>
+            <td>Bankfoot Playground</td>
+            <td>Refuse / suspected fly-tipping</td>
+            <td>5 November 2026</td>
+            <td><span class="status">Observation recorded</span></td>
+            <td>
+              Refuse observed. Land ownership and responsible authority
+              require confirmation.
+            </td>
+          </tr>
+
+          <tr>
+            <td class="case-id">IP-003</td>
+            <td>Barskiven Road</td>
+            <td>Abandoned shopping trolleys</td>
+            <td>5 November 2026</td>
+            <td><span class="status">Observation recorded</span></td>
+            <td>
+              Trolleys observed. Ownership and removal arrangements
+              have not been confirmed.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="small" style="margin-top:15px">
+      Council submissions, reference numbers and official responses
+      have not been confirmed for these entries.
+    </p>
+  </div>
+</section>
+
+<!-- REPORT FORM -->
+
+<section id="report" class="section-dark">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Community Evidence</div>
+      <h2>Submit a Public Interest Report</h2>
+
+      <p>
+        Help document issues affecting Paisley and Renfrewshire.
+        Submissions may be reviewed before publication.
+      </p>
+    </div>
+
+    <div class="form-container">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSe1hk9FvxsnAgGz4o1nGSedofXV2k-oyKzC27Hts-YfupHeqw/viewform?embedded=true"
+        width="100%"
+        height="1500"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Imperium Paisley Public Interest Report">
+        Loading form…
+      </iframe>
+    </div>
+
+    <p class="small" style="margin-top:20px">
+      Submitting this form does not automatically notify Renfrewshire Council.
+      For urgent issues, contact the relevant authority directly.
+    </p>
+
+    <p style="margin-top:15px">
+      <a
+        class="button button-outline"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSe1hk9FvxsnAgGz4o1nGSedofXV2k-oyKzC27Hts-YfupHeqw/viewform"
+        target="_blank"
+        rel="noopener">
+        Open Form in New Window
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- FOI -->
+
+<section id="foi">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Public Records</div>
+      <h2>FOI & correspondence</h2>
+
+      <p>
+        Public accountability depends on reliable records,
+        transparent requests and accurate reporting.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Freedom of Information</h3>
+        <p>
+          We may use lawful information requests to seek records
+          concerning public services, decisions and performance.
+        </p>
+        <div class="gold-line"></div>
+        <p class="small">
+          Request logs should include dates, subjects, authorities
+          and outcomes where appropriate.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Correspondence log</h3>
+        <p>
+          Correspondence should be recorded accurately with
+          reference numbers and relevant dates.
+        </p>
+        <div class="gold-line"></div>
+        <p class="small">
+          Personal data and confidential information should be
+          redacted before publication.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Response tracking</h3>
+        <p>
+          We distinguish between requests submitted, responses
+          received and actions independently verified.
+        </p>
+        <div class="gold-line"></div>
+        <p class="small">
+          Response-time statistics should include their source
+          and methodology.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL -->
+
+<section class="legal">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Legal & Evidence Standard</div>
+      <h2>Responsible scrutiny</h2>
+    </div>
+
+    <p>
+      Imperium Paisley publishes observations and commentary
+      in the public interest. An observation does not, by itself,
+      establish ownership, responsibility, negligence, misconduct
+      or a breach of law.
+    </p>
+
+    <p style="margin-top:15px">
+      Legal references are provided for general information and must
+      be checked against the relevant facts and legislation.
+      This website does not provide legal advice.
+    </p>
+
+    <p style="margin-top:15px">
+      We aim to distinguish confirmed facts, reported information,
+      opinion and unresolved questions. Material errors may be corrected.
+    </p>
+
+    <p style="margin-top:15px">
+      Content must not be used to harass, threaten or target individuals.
+      Public officials may be scrutinised in relation to public duties,
+      but personal attacks and unsupported allegations are not part
+      of this initiative.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Contact</div>
+      <h2>Contact Imperium Paisley</h2>
+
+      <p>
+        For corrections, right of reply, public-interest information
+        or general enquiries, contact us below.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Official Correspondence</h3>
+
+      <p>
+        Email:
+        <a class="contact-email"
+           href="mailto:imperiumuk.paisley@yahoo.com">
+          imperiumuk.paisley@yahoo.com
+        </a>
+      </p>
+
+      <p class="small" style="margin-top:15px">
+        Please use this email for public-interest correspondence,
+        corrections and right-of-reply requests.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container footer-content">
+    <div>
+      <div class="footer-title">IMPERIUM PAISLEY</div>
+
+      <p>Independent civic scrutiny. Evidence-based accountability.</p>
+
+      <p class="small">
+        A non-partisan civic initiative focused on Paisley and Renfrewshire.
+      </p>
+    </div>
+
+    <div>
+      <p><a href="#top">Back to top ↑</a></p>
+      <p class="small">
+        © <span id="year"></span> Imperium Paisley
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Automatically update copyright year */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+/* Search and filter the public audit register */
+
+const searchInput = document.getElementById("caseSearch");
+const statusFilter = document.getElementById("statusFilter");
+const caseRows = document.querySelectorAll("#caseTable tbody tr");
+
+function filterCases() {
+  const searchTerm = searchInput.value.toLowerCase();
+  const selectedStatus = statusFilter.value.toLowerCase();
+
+  caseRows.forEach(row => {
+    const rowText = row.textContent.toLowerCase();
+    const rowStatus = row.cells[4].textContent.toLowerCase();
+
+    const matchesSearch = rowText.includes(searchTerm);
+    const matchesStatus =
+      !selectedStatus || rowStatus.includes(selectedStatus);
+
+    row.style.display =
+      matchesSearch && matchesStatus ? "" : "none";
+  });
+}
+
+searchInput.addEventListener("input", filterCases);
+statusFilter.addEventListener("change", filterCases);
+</script>
 
 </body>
 </html>
