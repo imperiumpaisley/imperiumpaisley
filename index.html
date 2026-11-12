@@ -4,96 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imperium Paisley | Civic Accountability & Public Audits</title>
-    <meta name="description" content="Independent civic watchdog holding Renfrewshire Council strictly accountable via public audits, statutory compliance reviews, and formal casework.">
     <style>
         :root {
-            --navy: #0f172a;
-            --navy-light: #1e293b;
-            --border: #334155;
-            --text: #f8fafc;
-            --muted: #94a3b8;
+            --bg: #0b0f19;
+            --card-bg: #111827;
+            --border: #1f2937;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
             --accent: #3b82f6;
             --accent-hover: #60a5fa;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--navy);
+            background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
-            padding: 2rem 1rem;
+            line-height: 1.5;
+            padding: 1.5rem 1rem;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background-color: var(--navy-light);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
         }
         header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1.5rem;
             margin-bottom: 1.5rem;
         }
         h1 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
             color: #ffffff;
-        }
-        .tagline {
-            font-style: italic;
-            color: var(--muted);
-            font-size: 1.1rem;
             margin-bottom: 1rem;
         }
-        .mandate {
-            color: var(--text);
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-bottom: 2px solid #374151;
+            padding-bottom: 0.75rem;
             margin-bottom: 1.5rem;
         }
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
+        nav a {
+            color: var(--text);
             text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.2s;
-            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
-        .btn:hover {
-            background-color: var(--accent-hover);
+        nav a:hover {
+            color: var(--accent-hover);
         }
-        h2 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--accent);
-            padding-left: 0.75rem;
-            color: #ffffff;
+        .filter-section {
+            margin-bottom: 1.5rem;
         }
-        ul {
-            list-style-type: none;
-        }
-        li {
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            padding: 1rem;
+        select {
+            background-color: #e5e7eb;
+            color: #111827;
+            border: none;
+            padding: 0.5rem 1rem;
             border-radius: 6px;
-            margin-bottom: 1rem;
+            font-weight: 600;
+            width: 100%;
+            max-width: 250px;
+            cursor: pointer;
         }
-        li strong {
+        .table-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        th {
+            background-color: #1f2937;
             color: #ffffff;
+            font-weight: 600;
         }
-        footer {
-            margin-top: 2rem;
-            text-align: center;
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .footer-note {
             font-size: 0.85rem;
             color: var(--muted);
-            border-top: 1px solid var(--border);
-            padding-top: 1rem;
+            margin-top: 1rem;
         }
     </style>
 </head>
@@ -102,29 +104,59 @@
     <div class="container">
         <header>
             <h1>IMPERIUM PAISLEY</h1>
-            <p class="tagline">"Evidence over rhetoric. Accountability over excuses."</p>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#principles">Principles</a>
+                <a href="#audit">Public Audit</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1hk9FvxsnAgGz4o1nGSedofXV2k-oyKzC27Hts-YfupHeqw/viewform" target="_blank">Report Issue</a>
+                <a href="#foi">FOI</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </header>
 
-        <section class="mandate">
-            <p>Independent civic watchdog holding Renfrewshire Council strictly accountable via public audits, statutory compliance reviews, and formal correspondence. We track local authority performance against the <strong>Environmental Protection Act 1990 (Section 89)</strong> and the <strong>Roads (Scotland) Act 1984</strong>, demanding transparency rather than departmental deflection.</p>
-        </section>
+        <div class="filter-section">
+            <select>
+                <option>All statuses</option>
+                <option>Active</option>
+                <option>Under Review</option>
+                <option>Resolved</option>
+            </select>
+        </div>
 
-        <!-- Google Form link integrated directly -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1hk9FvxsnAgGz4o1nGSedofXV2k-oyKzC27Hts-YfupHeqw/viewform" class="btn" target="_blank">Report an Issue / Submit Evidence</a>
+        <div class="table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Case ID</th>
+                        <th>Location</th>
+                        <th>Issue</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>IP-001</strong></td>
+                        <td>Killoch Avenue</td>
+                        <td>Road / footway condition (EPA 1990 Section 89 compliance)</td>
+                        <td>5 November 2026</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IP-002</strong></td>
+                        <td>Bankfoot Playground</td>
+                        <td>Refuse / suspected fly-tipping & amenity maintenance</td>
+                        <td>5 November 2026</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IP-003</strong></td>
+                        <td>Barskiven Road</td>
+                        <td>Abandoned shopping trolleys & infrastructure upkeep</td>
+                        <td>5 November 2026</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <section>
-            <h2>Active Audit Register</h2>
-            <ul>
-                <li><strong>IP-001 — Killoch Avenue:</strong> Environmental Protection Act 1990 (Section 89) compliance & persistent fly-tipping/bin neglect.</li>
-                <li><strong>IP-002 — Bankfoot Playground:</strong> Public safety and amenity maintenance oversight.</li>
-                <li><strong>IP-003 — Barskiven Road:</strong> Infrastructure, road upkeep, and statutory duties under the Roads (Scotland) Act 1984.</li>
-                <li><strong>IP-SYS-001 & IP-SYS-002:</strong> Systemic correspondence regarding public bin shortages across Ferguslie Park/Linwood and HWRC evening hours/cross-departmental siloing.</li>
-            </ul>
-        </section>
-
-        <footer>
-            <p>Imperium Paisley &bull; Public Interest Municipal Audits</p>
-        </footer>
+        <p class="footer-note">Council submissions, reference numbers and official responses have not been confirmed for these entries.</p>
     </div>
 
 </body>
