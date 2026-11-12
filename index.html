@@ -8,9 +8,7 @@
         :root {
             --bg: #07090e;
             --surface: #111827;
-            --surface-hover: #1f2937;
             --border: #1f2937;
-            --border-glow: #374151;
             --text: #f9fafb;
             --muted: #9ca3af;
             --accent: #f59e0b;
@@ -25,10 +23,7 @@
             line-height: 1.6;
             padding: 2rem 1rem;
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .container { max-width: 900px; margin: 0 auto; }
         header {
             display: flex;
             align-items: center;
@@ -39,55 +34,25 @@
             margin-bottom: 2.5rem;
             gap: 1rem;
         }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+        .brand { display: flex; align-items: center; gap: 1rem; }
         .logo-badge {
             background: linear-gradient(135deg, #f59e0b, #d97706);
             color: #000;
-            width: 52px;
-            height: 52px;
+            width: 52px; height: 52px;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: bold;
             box-shadow: 0 0 20px var(--accent-glow);
         }
-        .brand-text h1 {
-            font-size: 1.35rem;
-            color: #ffffff;
-            font-weight: 800;
-            letter-spacing: 0.05em;
-        }
-        .brand-text p {
-            font-size: 0.8rem;
-            color: var(--muted);
-            letter-spacing: 0.02em;
-        }
-        nav {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-        nav a:hover, nav a.active {
-            color: var(--accent);
-        }
+        .brand-text h1 { font-size: 1.35rem; color: #ffffff; font-weight: 800; letter-spacing: 0.05em; }
+        .brand-text p { font-size: 0.8rem; color: var(--muted); }
+        nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+        nav a:hover { color: var(--accent); }
         .hero {
             text-align: center;
             margin-bottom: 3rem;
             padding: 2rem 1rem;
-            background: radial-gradient(circle at center, rgba(245, 158, 11, 0.03) 0%, transparent 70%);
         }
         .hero-tag {
             display: inline-block;
@@ -98,135 +63,55 @@
             border-radius: 30px;
             font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 0.08em;
-            margin-bottom: 1.25rem;
             text-transform: uppercase;
+            margin-bottom: 1.25rem;
         }
-        .hero h2 {
-            font-size: 2.25rem;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-        .hero p {
-            color: var(--muted);
-            max-width: 640px;
-            margin: 0 auto;
-            font-size: 1.05rem;
-        }
-        .grid-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        @media(min-width: 768px) {
-            .grid-cards { grid-template-columns: 1fr 1fr; }
-        }
+        .hero h2 { font-size: 2.25rem; color: #ffffff; margin-bottom: 1rem; }
+        .hero p { color: var(--muted); max-width: 640px; margin: 0 auto; font-size: 1.05rem; }
+        .grid-cards { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+        @media(min-width: 768px) { .grid-cards { grid-template-columns: 1fr 1fr; } }
         .card {
             background-color: var(--surface);
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 1.75rem;
-            transition: border-color 0.2s, transform 0.2s;
         }
-        .card:hover {
-            border-color: var(--border-glow);
-        }
-        .card.full-width {
-            grid-column: 1 / -1;
-        }
+        .card.full-width { grid-column: 1 / -1; }
         .card-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.15rem;
-            color: #ffffff;
-            font-weight: 700;
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 1.15rem; color: #ffffff; font-weight: 700;
             margin-bottom: 0.75rem;
         }
-        .card-desc {
-            color: var(--muted);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
+        .card-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
         .btn-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            background-color: var(--accent);
-            color: #000000;
-            padding: 0.85rem 1.25rem;
-            border-radius: 10px;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: background-color 0.2s, box-shadow 0.2s;
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 100%; background-color: var(--accent); color: #000000;
+            padding: 0.85rem 1.25rem; border-radius: 10px; font-weight: 700;
+            text-decoration: none; font-size: 0.95rem;
             box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
         }
-        .btn-action:hover {
-            background-color: #fbbf24;
-            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.3);
-        }
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.9rem;
-        }
-        th, td {
-            padding: 1rem 1.25rem;
-            border-bottom: 1px solid var(--border);
-            vertical-align: top;
-        }
-        th {
-            color: var(--muted);
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            background-color: rgba(255, 255, 255, 0.01);
-        }
+        .btn-action:hover { background-color: #fbbf24; }
+        .table-container { width: 100%; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
+        th, td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+        th { color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
         tr:last-child td { border-bottom: none; }
         .badge-status {
-            display: inline-block;
-            background-color: rgba(59, 130, 246, 0.1);
-            color: var(--blue-accent);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            padding: 0.2rem 0.6rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 700;
+            display: inline-block; background-color: rgba(59, 130, 246, 0.1);
+            color: var(--blue-accent); border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700;
         }
-        .stat-list {
-            list-style: none;
-        }
+        .stat-list { list-style: none; }
         .stat-list li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
+            padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+            display: flex; justify-content: space-between; font-size: 0.9rem;
         }
         .stat-list li:last-child { border-bottom: none; }
         .stat-list span { color: var(--muted); font-size: 0.85rem; }
-        footer {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-top: 4rem;
-            border-top: 1px solid var(--border);
-            padding-top: 2rem;
-        }
+        footer { text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 4rem; border-top: 1px solid var(--border); padding-top: 2rem; }
     </style>
 </head>
 <body>
-
     <div class="container">
         <header>
             <div class="brand">
@@ -237,7 +122,7 @@
                 </div>
             </div>
             <nav>
-                <a href="#audit" class="active">Audits</a>
+                <a href="#audit">Audits</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1hk9FvxsnAgGz4o1nGSedofXV2k-oyKzC27Hts-YfupHeqw/viewform" target="_blank">Report Issue</a>
                 <a href="#frameworks">Statutory Framework</a>
             </nav>
@@ -250,20 +135,14 @@
         </section>
 
         <div class="grid-cards">
-            <!-- Quick Report Card -->
             <div class="card">
-                <div class="card-header">
-                    <span>📢</span> Submit Evidence
-                </div>
+                <div class="card-header"><span>📢</span> Submit Evidence</div>
                 <p class="card-desc">Witnessed uncollected refuse, road degradation, or service neglect? Log it securely into our public intake queue.</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1hk9FvxsnAgGz4o1nGSedofXV2k-oyKzC27Hts-YfupHeqw/viewform" target="_blank" class="btn-action">Open Reporting Form</a>
             </div>
 
-            <!-- Statutory Focus Card -->
             <div class="card" id="frameworks">
-                <div class="card-header">
-                    <span>📜</span> Legal Standards
-                </div>
+                <div class="card-header"><span>📜</span> Legal Standards</div>
                 <ul class="stat-list">
                     <li><strong>EPA 1990 (Sec 89)</strong> <span>Street litter & cleanliness</span></li>
                     <li><strong>Roads Act (1984)</strong> <span>Footway & surface upkeep</span></li>
@@ -271,13 +150,9 @@
                 </ul>
             </div>
 
-            <!-- Active Audit Register -->
             <div class="card full-width" id="audit">
-                <div class="card-header">
-                    <span>📁</span> Active Casework Register
-                </div>
+                <div class="card-header"><span>📁</span> Active Casework Register</div>
                 <p class="card-desc">Live records of formal municipal inquiries currently under review.</p>
-                
                 <div class="table-container">
                     <table>
                         <thead>
@@ -317,6 +192,5 @@
             <p>Imperium Paisley &bull; Independent Municipal Audits & Public Accountability</p>
         </footer>
     </div>
-
 </body>
 </html>
