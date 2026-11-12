@@ -3,107 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imperium Paisley | Civic Accountability & Public Audits</title>
-    <meta name="description" content="Independent civic watchdog holding Renfrewshire Council strictly accountable via public audits, statutory compliance reviews, and formal casework.">
+    <title>Imperium Paisley | Non-Partisan Civic Accountability Platform</title>
     <style>
         :root {
-            --navy: #0f172a;
-            --navy-light: #1e293b;
-            --border: #334155;
-            --text: #f8fafc;
-            --muted: #94a3b8;
-            --accent: #3b82f6;
-            --accent-hover: #60a5fa;
+            --bg: #090d16;
+            --card-bg: #111827;
+            --border: #1f2937;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --accent: #f59e0b;
+            --accent-hover: #fbbf24;
+            --accent-dark: #b45309;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--navy);
+            background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
-            padding: 2rem 1rem;
+            line-height: 1.5;
+            padding: 1.5rem 1rem;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background-color: var(--navy-light);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
         }
         header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--border);
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-        }
-        h1 {
-            font-size: 2rem;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-        }
-        .tagline {
-            font-style: italic;
-            color: var(--muted);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-        .mandate {
-            color: var(--text);
-            margin-bottom: 1.5rem;
-        }
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.2s;
+            padding-bottom: 1.25rem;
             margin-bottom: 2rem;
+            gap: 1rem;
         }
-        .btn:hover {
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .logo-box {
+            background-color: var(--accent);
+            color: #000;
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .brand-text h1 {
+            font-size: 1.25rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .brand-text p {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        nav {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        nav a:hover, nav a.active {
+            color: var(--accent);
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .badge {
+            display: inline-block;
+            background-color: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .hero h2 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .hero p {
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.15rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .section-desc {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--muted);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+        }
+        input, select, textarea {
+            width: 100%;
+            background-color: #1f2937;
+            border: 1px solid #374151;
+            color: #ffffff;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        textarea { resize: vertical; min-height: 100px; }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background-color: var(--accent);
+            color: #000000;
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            margin-top: 1.25rem;
+            transition: background-color 0.2s;
+        }
+        .btn-submit:hover {
             background-color: var(--accent-hover);
         }
-        h2 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--accent);
-            padding-left: 0.75rem;
-            color: #ffffff;
+        .table-responsive {
+            overflow-x: auto;
         }
-        ul {
-            list-style-type: none;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.85rem;
         }
-        li {
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
+        th, td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        th {
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        tr:last-child td { border-bottom: none; }
+        .rep-card {
+            background-color: #1f2937;
+            border: 1px solid #374151;
             padding: 1rem;
-            border-radius: 6px;
-            margin-bottom: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
         }
-        li strong {
+        .rep-title {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .rep-name {
+            font-size: 1.05rem;
             color: #ffffff;
+            font-weight: 700;
+            margin: 0.2rem 0;
+        }
+        .rep-area {
+            font-size: 0.85rem;
+            color: var(--muted);
         }
         footer {
-            margin-top: 2rem;
             text-align: center;
             font-size: 0.85rem;
             color: var(--muted);
+            margin-top: 3rem;
             border-top: 1px solid var(--border);
-            padding-top: 1rem;
+            padding-top: 1.5rem;
         }
     </style>
 </head>
@@ -111,31 +226,113 @@
 
     <div class="container">
         <header>
-            <!-- Logo image placeholder: ensure your image file is named logo.jpg or change src -->
-            <img src="logo.jpg" alt="Imperium Paisley Logo" class="logo">
-            <h1>IMPERIUM PAISLEY</h1>
-            <p class="tagline">"Evidence over rhetoric. Accountability over excuses."</p>
+            <div class="brand">
+                <div class="logo-box">⚖️</div>
+                <div class="brand-text">
+                    <h1>Imperium Paisley</h1>
+                    <p>Non-Partisan Civic Accountability Platform</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#casework">Casework</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1hk9FvxsnAgGz4o1nGSedofXV2k-oyKzC27Hts-YfupHeqw/viewform" target="_blank" class="active">Report Issue</a>
+                <a href="#representatives">Representatives</a>
+            </nav>
         </header>
 
-        <section class="mandate">
-            <p>Independent civic watchdog holding Renfrewshire Council strictly accountable via public audits, statutory compliance reviews, and formal casework. We track local authority performance against the <strong>Environmental Protection Act 1990 (Section 89)</strong> and the <strong>Roads (Scotland) Act 1984</strong>, demanding transparency rather than departmental deflection.</p>
+        <section class="hero">
+            <span class="badge">Evidence over rhetoric</span>
+            <h2>Holding Renfrewshire Council to Account</h2>
+            <p>Independent, transparent tracking of public infrastructure, waste management, and local operational failures across Paisley.</p>
         </section>
 
-        <!-- Google Form integration -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1hk9FvxsnAgGz4o1nGSedofXV2k-oyKzC27Hts-YfupHeqw/viewform" class="btn" target="_blank">Report an Issue / Submit Evidence</a>
+        <!-- Report Issue Card -->
+        <div class="card" id="report">
+            <div class="section-title">
+                <span>📢</span> Report a Local Issue
+            </div>
+            <p class="section-desc">Notice something neglected in Paisley? Submit details below to log it into our public queue via our secure reporting form.</p>
+            
+            <div class="form-group">
+                <label>Issue Category</label>
+                <select>
+                    <option>Waste & Bins</option>
+                    <option>Roads & Pavements (Roads Scotland Act 1984)</option>
+                    <option>Environmental Neglect (EPA 1990 Section 89)</option>
+                    <option>Public Amenities & Parks</option>
+                </select>
+            </div>
 
-        <section>
-            <h2>Active Audit Register</h2>
-            <ul>
-                <li><strong>IP-001 — Killoch Avenue:</strong> Environmental Protection Act 1990 (Section 89) compliance & persistent fly-tipping/bin neglect.</li>
-                <li><strong>IP-002 — Bankfoot Playground:</strong> Public safety and amenity maintenance oversight.</li>
-                <li><strong>IP-003 — Barskiven Road:</strong> Infrastructure, road upkeep, and statutory duties under the Roads (Scotland) Act 1984.</li>
-                <li><strong>IP-SYS-001 & IP-SYS-002:</strong> Systemic correspondence regarding public bin shortages across Ferguslie Park/Linwood and HWRC evening hours/cross-departmental siloing.</li>
-            </ul>
-        </section>
+            <div class="form-group">
+                <label>Location in Paisley</label>
+                <input type="text" placeholder="e.g. High Street, Paisley">
+            </div>
+
+            <div class="form-group">
+                <label>Description of Issue</label>
+                <textarea placeholder="Provide concise details..."></textarea>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1hk9FvxsnAgGz4o1nGSedofXV2k-oyKzC27Hts-YfupHeqw/viewform" target="_blank" class="btn-submit">Open Secure Submission Form</a>
+        </div>
+
+        <!-- Active Casework Log -->
+        <div class="card" id="casework">
+            <div class="section-title">
+                <span>📁</span> Active Casework Log
+            </div>
+            <p class="section-desc">Live audit logs tracking formal council inquiries and statutory compliance reviews.</p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Case ID</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="color: var(--accent);">IP-001</strong></td>
+                            <td>Environmental</td>
+                            <td>Killoch Avenue - EPA 1990 Section 89 compliance & bin neglect.</td>
+                            <td><span style="color: var(--accent); font-weight: 600;">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: var(--accent);">IP-002</strong></td>
+                            <td>Amenities</td>
+                            <td>Bankfoot Playground - Refuse and fly-tipping oversight.</td>
+                            <td><span style="color: var(--accent); font-weight: 600;">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: var(--accent);">IP-003</strong></td>
+                            <td>Infrastructure</td>
+                            <td>Barskiven Road - Roads (Scotland) Act 1984 upkeep review.</td>
+                            <td><span style="color: var(--accent); font-weight: 600;">Active</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Local Representatives -->
+        <div class="card" id="representatives">
+            <div class="section-title">
+                <span>👥</span> Local Representatives
+            </div>
+            <p class="section-desc">Elected officials responsible for public accountability in our constituency.</p>
+            
+            <div class="rep-card">
+                <div class="rep-title">MP</div>
+                <div class="rep-name">Johanna Baxter MP</div>
+                <div class="rep-area">Paisley and Renfrewshire South</div>
+            </div>
+        </div>
 
         <footer>
-            <p>Imperium Paisley &bull; Public Interest Municipal Audits</p>
+            <p>Imperium Paisley &bull; Independent Municipal Audits</p>
         </footer>
     </div>
 
