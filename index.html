@@ -4,343 +4,302 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101827">
-
 <title>Imperium Paisley | Civic Accountability</title>
-
-<meta name="description" content="Imperium Paisley is an independent, non-partisan civic watchdog promoting transparency, accountability and stronger local communities in Paisley and Renfrewshire.">
-
+<meta name="description" content="Imperium Paisley is an independent, non-partisan civic watchdog promoting transparency, accountability and stronger communities across Paisley and Renfrewshire.">
 <style>
 :root {
-  --navy: #101827;
-  --navy-light: #1b293d;
-  --gold: #d7ad57;
-  --gold-light: #f0d89e;
-  --paper: #f4f6f9;
-  --white: #ffffff;
-  --text: #172033;
-  --muted: #687487;
-  --border: #dce2ea;
+  --navy:#101827;
+  --navy-light:#1b293d;
+  --gold:#d7ad57;
+  --gold-light:#f0d89e;
+  --paper:#f4f6f9;
+  --white:#fff;
+  --text:#172033;
+  --muted:#687487;
+  --border:#dce2ea;
 }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html { scroll-behavior: smooth; }
-
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--paper);
-  color: var(--text);
-  line-height: 1.65;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--paper);
+  color:var(--text);
+  line-height:1.65;
 }
-
-a { color: inherit; }
-
+a {color:inherit}
 header {
-  background: var(--navy);
-  color: white;
-  padding: 16px 5%;
-  border-bottom: 3px solid var(--gold);
+  background:var(--navy);
+  color:white;
+  padding:16px 5%;
+  border-bottom:3px solid var(--gold);
 }
-
 .header-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
-
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: white;
-  text-decoration: none;
-  font-weight: 800;
-  letter-spacing: 1px;
-  font-size: 1.1rem;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:white;
+  text-decoration:none;
+  font-weight:800;
+  letter-spacing:1px;
+  font-size:1.1rem;
 }
-
 .brand img {
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid var(--gold);
+  width:64px;
+  height:64px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid var(--gold);
 }
-
-.brand span { color: var(--gold-light); }
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 17px;
-}
-
+.brand span {color:var(--gold-light)}
+nav {display:flex;flex-wrap:wrap;gap:17px}
 nav a {
-  color: white;
-  text-decoration: none;
-  font-size: .9rem;
-  font-weight: bold;
+  color:white;
+  text-decoration:none;
+  font-size:.9rem;
+  font-weight:bold;
 }
-
-nav a:hover { color: var(--gold); }
-
+nav a:hover {color:var(--gold)}
 .hero {
-  background: linear-gradient(rgba(16,24,39,.94), rgba(16,24,39,.96));
-  color: white;
-  padding: 85px 6%;
-  text-align: center;
+  background:linear-gradient(rgba(16,24,39,.94),rgba(16,24,39,.97));
+  color:white;
+  padding:85px 6%;
+  text-align:center;
 }
-
-.hero-inner {
-  max-width: 900px;
-  margin: auto;
-}
-
+.hero-inner {max-width:900px;margin:auto}
 .eyebrow {
-  color: var(--gold-light);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: .8rem;
-  font-weight: bold;
+  color:var(--gold-light);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:.8rem;
+  font-weight:bold;
 }
-
 .hero h1 {
-  font-size: clamp(2.2rem, 6vw, 4.2rem);
-  line-height: 1.1;
-  margin: 20px 0;
+  font-size:clamp(2.2rem,6vw,4.2rem);
+  line-height:1.1;
+  margin:20px 0;
 }
-
-.hero h1 span { color: var(--gold); }
-
+.hero h1 span {color:var(--gold)}
 .hero p {
-  color: #e1e6ee;
-  max-width: 720px;
-  margin: 0 auto 28px;
-  font-size: 1.1rem;
+  color:#e1e6ee;
+  max-width:720px;
+  margin:0 auto 28px;
+  font-size:1.1rem;
 }
-
 .button {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--navy);
-  text-decoration: none;
-  padding: 13px 24px;
-  border-radius: 5px;
-  font-weight: bold;
-  margin: 6px;
+  display:inline-block;
+  background:var(--gold);
+  color:var(--navy);
+  text-decoration:none;
+  padding:13px 24px;
+  border-radius:5px;
+  font-weight:bold;
+  margin:6px;
 }
-
-.button:hover { background: var(--gold-light); }
-
+.button:hover {background:var(--gold-light)}
 .button-outline {
-  border: 1px solid var(--gold);
-  color: var(--gold-light);
-  background: transparent;
+  border:1px solid var(--gold);
+  color:var(--gold-light);
+  background:transparent;
 }
-
-section { padding: 65px 6%; }
-
-.container {
-  max-width: 1150px;
-  margin: auto;
-}
-
+section {padding:65px 6%}
+.container {max-width:1150px;margin:auto}
 .section-title {
-  color: var(--navy);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-bottom: 12px;
+  color:var(--navy);
+  font-size:clamp(1.8rem,4vw,2.5rem);
+  margin-bottom:12px;
 }
-
 .section-intro {
-  color: var(--muted);
-  max-width: 780px;
-  margin-bottom: 30px;
+  color:var(--muted);
+  max-width:780px;
+  margin-bottom:30px;
 }
-
 .gold-line {
-  width: 65px;
-  height: 4px;
-  background: var(--gold);
-  margin: 16px 0 25px;
+  width:65px;
+  height:4px;
+  background:var(--gold);
+  margin:16px 0 25px;
 }
-
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
 }
-
 .card {
-  background: white;
-  padding: 25px;
-  border: 1px solid var(--border);
-  border-top: 4px solid var(--gold);
-  border-radius: 8px;
-  box-shadow: 0 5px 18px rgba(16,24,39,.04);
+  background:white;
+  padding:25px;
+  border:1px solid var(--border);
+  border-top:4px solid var(--gold);
+  border-radius:8px;
+  box-shadow:0 5px 18px rgba(16,24,39,.04);
 }
-
-.card h3 {
-  color: var(--navy);
-  margin-bottom: 10px;
-}
-
-.card p { color: var(--muted); }
-
+.card h3 {color:var(--navy);margin-bottom:10px}
+.card p {color:var(--muted)}
 .dark-section {
-  background: var(--navy);
-  color: white;
+  background:var(--navy);
+  color:white;
 }
-
-.dark-section .section-title { color: white; }
-
-.dark-section .section-intro { color: #d2d9e4; }
-
-.dark-section .card { color: var(--text); }
-
-.case-list {
-  display: grid;
-  gap: 18px;
-}
-
+.dark-section .section-title {color:white}
+.dark-section .section-intro {color:#d2d9e4}
+.dark-section .card {color:var(--text)}
+.case-list {display:grid;gap:20px}
 .case {
-  background: white;
-  border: 1px solid var(--border);
-  border-left: 5px solid var(--gold);
-  border-radius: 7px;
-  padding: 22px;
+  background:white;
+  border:1px solid var(--border);
+  border-left:5px solid var(--gold);
+  border-radius:8px;
+  padding:25px;
+  box-shadow:0 5px 18px rgba(16,24,39,.04);
 }
-
 .case h3 {
-  color: var(--navy);
-  margin-bottom: 8px;
+  color:var(--navy);
+  font-size:1.25rem;
+  margin-bottom:12px;
 }
-
-.case p { margin: 5px 0; }
-
+.case p {margin:7px 0}
+.case-description {
+  color:var(--muted);
+  margin:14px 0;
+}
+.case-details {
+  background:#f4f6f9;
+  padding:15px;
+  border-radius:5px;
+  margin-top:15px;
+}
+.case-details p {font-size:.94rem}
 .status {
-  display: inline-block;
-  margin-top: 10px;
-  background: #f1e7d0;
-  color: #75551b;
-  border-radius: 20px;
-  padding: 5px 12px;
-  font-size: .8rem;
-  font-weight: bold;
+  display:inline-block;
+  margin:12px 5px 5px 0;
+  border-radius:20px;
+  padding:5px 12px;
+  font-size:.8rem;
+  font-weight:bold;
 }
-
+.status-submitted {
+  background:#e2f0e8;
+  color:#205d3c;
+}
+.status-pending {
+  background:#fff1d6;
+  color:#795717;
+}
+.status-recorded {
+  background:#e8edf4;
+  color:#40516b;
+}
+.status-review {
+  background:#eee8f8;
+  color:#634b83;
+}
 .notice {
-  background: #fff8e8;
-  border-left: 4px solid var(--gold);
-  padding: 18px;
-  border-radius: 5px;
-  margin-top: 25px;
+  background:#fff8e8;
+  border-left:4px solid var(--gold);
+  padding:18px;
+  border-radius:5px;
+  margin-top:25px;
 }
-
-.steps { padding-left: 22px; }
-
-.steps li { margin: 12px 0; }
-
+.register-summary {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+  margin:25px 0 30px;
+}
+.summary-box {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:7px;
+  padding:20px;
+}
+.summary-box strong {
+  display:block;
+  font-size:2rem;
+  color:var(--navy);
+}
+.summary-box span {color:var(--muted);font-size:.9rem}
+.steps {padding-left:22px}
+.steps li {margin:12px 0}
 .contact-panel {
-  background: var(--navy);
-  color: white;
-  padding: 35px;
-  border-radius: 8px;
-  text-align: center;
+  background:var(--navy);
+  color:white;
+  padding:35px;
+  border-radius:8px;
+  text-align:center;
 }
-
 .contact-panel h2 {
-  color: var(--gold-light);
-  margin-bottom: 12px;
+  color:var(--gold-light);
+  margin-bottom:12px;
 }
-
-.contact-panel a { color: var(--gold-light); }
-
+.contact-panel a {color:var(--gold-light)}
 footer {
-  background: #090f19;
-  color: #cbd3df;
-  padding: 35px 6%;
-  text-align: center;
-  font-size: .85rem;
+  background:#090f19;
+  color:#cbd3df;
+  padding:35px 6%;
+  text-align:center;
+  font-size:.85rem;
 }
-
-footer p { margin: 7px 0; }
-
-footer a { color: var(--gold-light); }
-
-@media (max-width: 650px) {
-  .header-inner { justify-content: center; }
-  nav { justify-content: center; }
-  .hero { padding: 65px 6%; }
-  section { padding: 48px 5%; }
+footer p {margin:7px 0}
+footer a {color:var(--gold-light)}
+@media(max-width:650px) {
+  .header-inner {justify-content:center}
+  nav {justify-content:center;gap:12px}
+  .hero {padding:65px 6%}
+  section {padding:48px 5%}
+  .case {padding:19px}
 }
 </style>
 </head>
-
 <body>
-
 <header id="top">
   <div class="header-inner">
-
-    <!-- YOUR UPLOADED IMPERIUM PAISLEY LOGO -->
     <a class="brand" href="#top">
-      <img
-        src="69F2DD1D-B40B-4E23-85F3-63D41959BFCE.png"
-        alt="Imperium Paisley official emblem">
+      <img src="69F2DD1D-B40B-4E23-85F3-63D41959BFCE.png"
+           alt="Imperium Paisley official emblem">
       <span>IMPERIUM PAISLEY</span>
     </a>
-
     <nav>
       <a href="#about">About</a>
-      <a href="#principles">Our Principles</a>
+      <a href="#principles">Principles</a>
       <a href="#cases">Public Audit</a>
       <a href="#report">Report an Issue</a>
       <a href="#contact">Contact</a>
     </nav>
-
   </div>
 </header>
-
 <main>
-
 <div class="hero">
   <div class="hero-inner">
     <p class="eyebrow">Independent Civic Accountability</p>
-
     <h1>
       Evidence over rhetoric.<br>
       <span>Accountability over excuses.</span>
     </h1>
-
     <p>
       An independent, non-partisan civic watchdog focused on
       transparency, public responsibility and stronger communities
       across Paisley and Renfrewshire.
     </p>
-
     <a class="button" href="#cases">View Public Audit</a>
     <a class="button button-outline" href="#report">Report an Issue</a>
   </div>
 </div>
-
 <section id="about">
   <div class="container">
     <h2 class="section-title">About Imperium Paisley</h2>
     <div class="gold-line"></div>
-
     <p class="section-intro">
       Imperium Paisley is an independent civic accountability
       initiative established to encourage transparency, responsible
       public administration and constructive scrutiny of local services.
     </p>
-
     <p>
       We believe residents deserve clear information about the
       services, facilities and public spaces they rely upon.
@@ -348,9 +307,7 @@ footer a { color: var(--gold-light); }
       available information, seeking explanations and monitoring
       responses from relevant authorities.
     </p>
-
     <br>
-
     <p>
       We are not affiliated with any political party. Our scrutiny
       is based on evidence, public responsibilities and outcomes,
@@ -358,233 +315,251 @@ footer a { color: var(--gold-light); }
     </p>
   </div>
 </section>
-
 <section class="dark-section" id="principles">
   <div class="container">
     <h2 class="section-title">Our Principles</h2>
     <p class="section-intro">
       Independent scrutiny must be fair, factual and constructive.
     </p>
-
     <div class="cards">
       <div class="card">
         <h3>Evidence First</h3>
-        <p>
-          We prioritise dated observations, photographs,
-          correspondence and verifiable public information.
-        </p>
+        <p>Dated observations, photographs, correspondence and verifiable information.</p>
       </div>
-
       <div class="card">
         <h3>Non-Partisan</h3>
-        <p>
-          We scrutinise decisions and public service performance,
-          not political party membership.
-        </p>
+        <p>We scrutinise public service performance, not political party membership.</p>
       </div>
-
       <div class="card">
         <h3>Public Accountability</h3>
-        <p>
-          We seek clear explanations, appropriate action and
-          transparent updates on reported concerns.
-        </p>
+        <p>We seek clear explanations, appropriate action and transparent updates.</p>
       </div>
-
       <div class="card">
         <h3>Constructive Reform</h3>
-        <p>
-          We support practical improvements that benefit residents
-          and strengthen local communities.
-        </p>
+        <p>We support practical improvements that benefit residents and communities.</p>
       </div>
     </div>
   </div>
 </section>
-
 <section id="cases">
   <div class="container">
     <h2 class="section-title">Public Audit Register</h2>
     <div class="gold-line"></div>
-
     <p class="section-intro">
-      The following records document observations made on
-      5 November 2026. They do not, by themselves, establish
-      responsibility or a breach of law.
+      Our public register documents local observations, formal
+      reports, correspondence and subsequent developments.
+      Each record distinguishes between a reported concern and
+      independently verified outcomes.
     </p>
-
-    <div class="case-list">
-
-      <article class="case">
-        <h3>IP-001 — Killoch Avenue</h3>
-        <p><strong>Issue:</strong> Road and footway condition</p>
-        <p><strong>Observed:</strong> 5 November 2026</p>
-        <p>
-          Surface deterioration and uneven areas recorded for
-          further assessment of the condition and any potential
-          pedestrian risk.
-        </p>
-        <span class="status">Observation recorded</span>
-      </article>
-
-      <article class="case">
-        <h3>IP-002 — Bankfoot Playground</h3>
-        <p><strong>Issue:</strong> Refuse / suspected fly-tipping</p>
-        <p><strong>Observed:</strong> 5 November 2026</p>
-        <p>
-          Waste and refuse observed within the playground area.
-          The precise land responsibility and circumstances
-          require confirmation.
-        </p>
-        <span class="status">Observation recorded</span>
-      </article>
-
-      <article class="case">
-        <h3>IP-003 — Barskiven Road</h3>
-        <p><strong>Issue:</strong> Abandoned shopping trolleys</p>
-        <p><strong>Observed:</strong> 5 November 2026</p>
-        <p>
-          Shopping trolleys observed in a public area.
-          Ownership and the appropriate collection responsibility
-          require confirmation.
-        </p>
-        <span class="status">Observation recorded</span>
-      </article>
-
+    <div class="register-summary">
+      <div class="summary-box">
+        <strong>4</strong>
+        <span>Public case records</span>
+      </div>
+      <div class="summary-box">
+        <strong>2</strong>
+        <span>Council submissions recorded</span>
+      </div>
+      <div class="summary-box">
+        <strong>3</strong>
+        <span>Retailer contacts recorded</span>
+      </div>
     </div>
-
+    <div class="case-list">
+      <!-- IP-001 -->
+      <article class="case">
+        <h3>IP-001 — Killoch Avenue, Paisley</h3>
+        <p><strong>Category:</strong> Roads and footways</p>
+        <p><strong>Observation date:</strong> 5 November 2026</p>
+        <div class="case-description">
+          Surface deterioration, cracking and uneven areas
+          were recorded for assessment of their condition
+          and potential pedestrian impact.
+        </div>
+        <div class="case-details">
+          <p><strong>Council reference:</strong> FS-Case-892238796</p>
+          <p><strong>Formal report:</strong> Submitted</p>
+          <p><strong>Follow-up correspondence:</strong> Email sent to the Council on 13 November 2026.</p>
+          <p><strong>Latest position:</strong> Awaiting Council response and inspection outcome.</p>
+          <p><strong>Next action:</strong> Monitor correspondence and seek an update if necessary.</p>
+        </div>
+        <span class="status status-submitted">Report submitted</span>
+        <span class="status status-pending">Awaiting response</span>
+      </article>
+      <!-- IP-002 -->
+      <article class="case">
+        <h3>IP-002 — Bankfoot Playground, Paisley</h3>
+        <p><strong>Category:</strong> Refuse and suspected fly-tipping</p>
+        <p><strong>Observation date:</strong> 5 November 2026</p>
+        <div class="case-description">
+          An observation concerning waste and refuse at
+          Bankfoot Playground. The precise location, land
+          responsibility and relationship to the subsequent
+          Council report require confirmation.
+        </div>
+        <div class="case-details">
+          <p><strong>Original record:</strong> Observation documented.</p>
+          <p><strong>Formal submission:</strong> A related Bankfoot waste report has been logged separately as IP-004.</p>
+          <p><strong>Latest position:</strong> Case relationship requires verification.</p>
+          <p><strong>Next action:</strong> Reconcile the original observation with the Council submission before publishing further conclusions.</p>
+        </div>
+        <span class="status status-recorded">Observation recorded</span>
+        <span class="status status-review">Record reconciliation</span>
+      </article>
+      <!-- IP-003 -->
+      <article class="case">
+        <h3>IP-003 — Barskiven Road, Paisley</h3>
+        <p><strong>Category:</strong> Abandoned shopping trolleys</p>
+        <p><strong>Observation date:</strong> 5 November 2026</p>
+        <div class="case-description">
+          Shopping trolleys bearing Asda, Matalan and B&amp;M
+          branding were observed in a roadside public area
+          near the Whites Bridge Avenue junction.
+        </div>
+        <div class="case-details">
+          <p><strong>Asda / Collex:</strong> Contacted. Location clarification and what3words reference ///punk.deal.cake supplied.</p>
+          <p><strong>Matalan:</strong> Collection enquiry email sent.</p>
+          <p><strong>B&amp;M:</strong> Collection enquiry email sent.</p>
+          <p><strong>Trolleywise:</strong> Contacted regarding non-Asda trolleys.</p>
+          <p><strong>Latest position:</strong> Awaiting replies and collection confirmation.</p>
+          <p><strong>Next action:</strong> Confirm ownership, collection arrangements and actual removal.</p>
+        </div>
+        <span class="status status-submitted">Retailers contacted</span>
+        <span class="status status-pending">Collection pending</span>
+      </article>
+      <!-- IP-004 -->
+      <article class="case">
+        <h3>IP-004 — Bankfoot Road, Paisley</h3>
+        <p><strong>Category:</strong> Reported fly-tipping</p>
+        <p><strong>Report date:</strong> 13 November 2026</p>
+        <div class="case-description">
+          A Council report was submitted concerning bags of
+          rubbish and furniture at the reported location
+          on Bankfoot Road.
+        </div>
+        <div class="case-details">
+          <p><strong>Council reference:</strong> FS-Case-892246251</p>
+          <p><strong>Reported items:</strong> Bags of rubbish and furniture.</p>
+          <p><strong>Council contact:</strong> ei@renfrewshire.gov.uk</p>
+          <p><strong>Formal report:</strong> Submitted and confirmation received.</p>
+          <p><strong>Latest position:</strong> Awaiting investigation and confirmation of any removal.</p>
+          <p><strong>Next action:</strong> Check the reported location and record the Council's response.</p>
+        </div>
+        <span class="status status-submitted">Report submitted</span>
+        <span class="status status-pending">Awaiting action</span>
+      </article>
+    </div>
     <div class="notice">
-      <strong>Important:</strong>
-      These are recorded observations. A case is not described
-      as submitted, investigated or resolved unless supporting
-      correspondence or verification confirms that status.
+      <strong>Public audit standards</strong><br>
+      These records describe observations and reporting activity.
+      A report submission does not establish that an authority
+      has accepted responsibility, that a legal breach has
+      occurred or that remedial work has been completed.
+      Case statuses are updated when supporting evidence becomes
+      available. No case is described as resolved without
+      verification.
     </div>
   </div>
 </section>
-
 <section id="report">
   <div class="container">
     <h2 class="section-title">Report a Local Issue</h2>
     <div class="gold-line"></div>
-
     <p class="section-intro">
       Have you noticed an issue affecting your street,
       neighbourhood or local public services?
       Submit the details and supporting evidence for review.
     </p>
-
     <div class="card">
       <h3>Submit an Observation</h3>
-
       <p>
         Use our reporting form to provide the location,
-        description, date and any relevant photographs.
+        description, date and relevant photographs.
       </p>
-
       <br>
-
       <a class="button"
          href="https://docs.google.com/forms/d/e/1FAIpQLSe1hk9FvxsnAgGz4o1nGSedofXV2k-oyKzC27Hts-YfupHeqw/viewform"
          target="_blank"
          rel="noopener">
         Open Reporting Form
       </a>
-
       <div class="notice">
-        Submitting this form sends information to Imperium Paisley,
-        not automatically to Renfrewshire Council. We review
-        submissions before deciding whether and how they may
-        be published. Do not include sensitive personal information.
+        Submitting this form sends information to Imperium
+        Paisley, not automatically to Renfrewshire Council.
+        We review submissions before deciding whether and
+        how they may be published. Do not include sensitive
+        personal information.
       </div>
     </div>
   </div>
 </section>
-
 <section class="dark-section" id="process">
   <div class="container">
     <h2 class="section-title">How Our Public Audit Works</h2>
-
     <p class="section-intro">
-      Every record should follow a transparent and consistent process.
+      Every record follows a transparent and consistent process.
     </p>
-
     <ol class="steps">
       <li><strong>Observation:</strong> Record the issue, location and date.</li>
       <li><strong>Evidence:</strong> Review photographs and supporting information.</li>
       <li><strong>Verification:</strong> Establish relevant facts and responsibilities.</li>
-      <li><strong>Correspondence:</strong> Seek clarification from the appropriate authority where appropriate.</li>
-      <li><strong>Monitoring:</strong> Record responses and any reported action.</li>
-      <li><strong>Review:</strong> Update the public record when further evidence is available.</li>
+      <li><strong>Correspondence:</strong> Contact the appropriate authority or organisation.</li>
+      <li><strong>Monitoring:</strong> Record responses and promised action.</li>
+      <li><strong>Review:</strong> Verify outcomes before marking cases resolved.</li>
     </ol>
   </div>
 </section>
-
 <section id="standards">
   <div class="container">
     <h2 class="section-title">Evidence and Fairness</h2>
     <div class="gold-line"></div>
-
     <p>
-      Imperium Paisley aims to distinguish clearly between
-      personal observations, allegations, verified facts and
+      Imperium Paisley distinguishes between personal
+      observations, reported concerns, verified facts and
       formal findings.
     </p>
-
     <br>
-
     <p>
       We will not knowingly publish misleading information,
       unverified accusations or private personal details.
-      Relevant organisations and individuals should have a
-      reasonable opportunity to respond to material concerns.
+      Relevant organisations should have a reasonable
+      opportunity to respond to material concerns.
     </p>
-
     <br>
-
     <p>
       The publication of an observation does not establish
-      negligence, wrongdoing or a legal breach. Any legal
-      references are included for information and should be
-      checked against the facts and applicable legislation.
+      negligence, wrongdoing or a legal breach.
     </p>
   </div>
 </section>
-
 <section id="contact">
   <div class="container">
     <div class="contact-panel">
       <h2>Contact Imperium Paisley</h2>
-
       <p>
         For correspondence, information or general enquiries,
         contact our independent civic initiative.
       </p>
-
       <br>
-
       <p>
         <strong>Email:</strong>
         <a href="mailto:imperiumuk.paisley@yahoo.com">
           imperiumuk.paisley@yahoo.com
         </a>
       </p>
-
       <br>
-
       <a class="button" href="#report">Submit an Issue</a>
     </div>
   </div>
 </section>
-
 </main>
-
 <footer>
   <p><strong>IMPERIUM PAISLEY</strong></p>
   <p>Independent Civic Accountability</p>
   <p>Evidence over rhetoric. Accountability through transparency.</p>
   <p>© 2026 Imperium Paisley. All rights reserved.</p>
   <p>Independent and non-partisan civic initiative.</p>
+  <p><a href="#top">Back to top</a></p>
 </footer>
-
 </body>
 </html>
